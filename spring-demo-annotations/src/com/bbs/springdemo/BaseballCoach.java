@@ -31,7 +31,7 @@ public class BaseballCoach implements Coach {
 	
 	@PostConstruct 
 	public void startUp() {
-		System.out.println("coach initialized");
+		System.out.println("coach initialized" + this.getClass());
 	}
 	
 	@PreDestroy
