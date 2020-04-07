@@ -16,6 +16,6 @@ public class TrackCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		return fortuneService.getFortune() + " and run 10 laps";
+		return fortuneService.getFortune() + ", and run 10 laps";
 	}
 }

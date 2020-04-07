@@ -7,16 +7,38 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:property-placeholder location="classpath:sport.properties"/>
 	
     <!-- Define your beans here -->
-      <bean id="myFortune" class="com.bbs.springdemo.HappyFortuneService"></bean>	
+      <bean id="myFortuneService" class="com.bbs.springdemo.HappyFortuneService"></bean>	
+      
      <bean id="myCoach" class="com.bbs.springdemo.TrackCoach">
      
         <!-- set up constructor injection -->
-   <constructor-arg ref="myFortune" />
+   <constructor-arg ref="myFortuneService" />
      </bean>	
      
+       <bean id="myCoach2" class="com.bbs.springdemo.CricketCoach">
+       
+        <!-- set up setter injection -->
+   <property name="fortuneService" ref="myFortuneService" />
+     </bean>	
 
+     <bean id="myCoach3" class="com.bbs.springdemo.BaseballCoach">
+       
+        <!-- set up setter injection -->
+           <constructor-arg ref="myFortuneService" />
+   <property name="emailAddress" value="coach@baseball.com" />
+      <property name="team" value="The Mighty Chipmunks" />
+     </bean>	
+     
+       <bean id="myCoach4" class="com.bbs.springdemo.BaseballCoach">
+       
+        <!-- set up setter injection -->
+           <constructor-arg ref="myFortuneService" />
+   <property name="emailAddress" value="${foo.email}" />
+      <property name="team" value="${foo.team}" />
+     </bean>	
 
 </beans>
 
