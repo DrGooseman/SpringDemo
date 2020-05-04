@@ -7,3 +7,4 @@ lib/
 */lib
 
 hibernate.cfg.xml*
+**/hibernate.cfg.xml*
