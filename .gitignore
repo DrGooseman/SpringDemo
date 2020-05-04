@@ -2,5 +2,8 @@
 lib
 .metadata
 /lib
+lib/
 
 */lib
+
+hibernate.cfg.xml*
